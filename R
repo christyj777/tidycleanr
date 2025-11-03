@@ -1,0 +1,13 @@
+#' @title Clean Column Names
+#' A wrapper around janitor::clean_names() that converts messy column
+#' names into snake_case and fixes duplicates.
+#'
+#' @param df A data.frame or tibble.
+#' @return A data.frame with cleaned column names.
+#' @examples
+#' clean_names(data.frame("First Name" = 1:3, "AGE " = 4:6))
+#' @export
+clean_names <- function(df) {
+  janitor::clean_names(df)
+}
+
