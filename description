@@ -1,0 +1,20 @@
+Package: tidycleanr
+Type: Package
+Title: Streamlining Data Cleaning for Everyday Analysis
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+      "Christine", "Jacob",
+      email = "christinejacob@usf.edu",
+      role = c("aut", "cre")
+    )
+  )
+Description: Simple, consistent utilities for preparing messy tabular data. It can standardize column names, convert common types, 
+        impute missing values with statistically relevant defaults, and remove duplicates across keys. Allows to clean data quicker, allowing
+        dev to spend more time on analysis and fine-tuning.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.1.2)
+Imports: dplyr, tidyr, stringr, janitor
+RoxygenNote: 7.3.3
