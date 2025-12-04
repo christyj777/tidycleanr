@@ -1,0 +1,53 @@
+---
+title: "tidycleanr: Quick Data Cleaning"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tidycleanr: Quick Data Cleaning}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+## Introduction: What is tidycleanr?
+
+tidycleanr provides simple, consistent tools to improve the early stages of data cleaning by streamlining repetitive tasks such as standardizing messy column names and removing duplicate rows while recording how many duplicates were removed. 
+
+## Load library
+```{r setup}
+library(tidycleanr)
+```
+## Example 1: Clean column names
+```{r load, echo=TRUE}
+library(tidycleanr)
+
+messy <- data.frame("First Name" = 1:5,
+                    "AGE " = sample(18:40, 5),
+                    check.names = FALSE)
+
+messy
+cleaned <- clean_names(messy)
+cleaned
+attr(cleaned, "old_names")
+```
+
+## Example 2: Remove duplicate rows
+```{r load, echo=TRUE}
+dups <- data.frame(
+id  = c(1, 1, 2, 3, 3),
+val = c("x", "x", "y", "z", "z")
+)
+
+dups
+clean_dups <- remove_duplicates(dups)
+clean_dups
+attr(clean_dups, "duplicates_removed")
+```
+
+## Reflection
+Developing the tidycleanr package has highlighted the value of building small, reliable tools that support reproducible data cleaning. Expanding the package beyond name cleaning to also include duplicate handling demonstrates how modular functions can work together to make early analysis steps more efficient. Formal testing ensures both functions behave consistently as the code evolves, creating confidence in future development. Organizing functionality, documentation, and tests within a package framework also strengthens long-term maintainability. Overall, building tidycleanr demonstrates how thoughtful package design can streamline workflows, reduce repeated effort, and support reproducible data cleaning across projects.
+

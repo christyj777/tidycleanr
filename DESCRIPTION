@@ -1,0 +1,26 @@
+Package: tidycleanr
+Type: Package
+Title: Streamlining Data Cleaning for Everyday Analysis
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+      "Christine", "Jacob",
+      email = "christinejacob@usf.edu",
+      role = c("aut", "cre")
+    )
+  )
+Description: Simple, consistent utilities for preparing messy tabular data. tidycleanr provides simple, reliable tools for preparing data frames for analysis. 
+             The package currently includes functions for cleaning and standardizing column names, as well as removing duplicate rows while tracking how many duplicates were dropped. 
+             These tools streamline the early stages of data cleaning, making it easier to prepare datasets efficiently and consistently.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.1.2)
+Imports: dplyr, tidyr, stringr, janitor
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+RoxygenNote: 7.3.3
